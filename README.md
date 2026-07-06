@@ -16,7 +16,7 @@ py -2 ICMP.py
 | Member | Usage |
 |------|---------|
 | Ronin Zerna | Used Claude AI to understand the struct and socket library, and also used it for debugging |
-|||
+| Andre Junsay | Used Gemini for debugging |
 
 ## References
 - Python `socket` library documentation — https://docs.python.org/3/library/socket.html
