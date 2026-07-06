@@ -48,6 +48,8 @@ def receiveOnePing(mySocket, ID, timeout, destAddr):
         if packetID == ID:
             timePayload = recPacket[28:]
             timeSent = struct.unpack("d", timePayload)[0]
+            delay_ms = (timeReceived - timeSent) * 1000
+            return "Sequence: {}, RTT: {:.2f} ms".format(sequence, delay_ms)
         
         #Fill in end
         
@@ -124,3 +126,7 @@ def ping(host, timeout=1):
         print(delay)
         time.sleep(1)# one second
     return delay
+
+if __name__ == '__main__':
+    target = raw_input("Enter Address: ")
+    ping(target, 2)
